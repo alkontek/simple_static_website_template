@@ -1,0 +1,9 @@
+/* SPDX-FileCopyrightText: 2026 ALKONTEK <git@alkontek.com>
+ * SPDX-License-Identifier: BSD-2-Clause
+ */
+@import "tailwindcss";
+/* Tailwind v4: paths are relative to this file (src/) */
+@import "./styles.scss";
+@import "./theme.scss";
+@source "../*.html";
+@source "./**/*.{js,scss,sass}";

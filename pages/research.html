@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" class="inverse">
+<head>
+    <meta charset="utf-8">
+    <title>Research | Simple Static Website Template</title>
+    <link rel="canonical" href="https://simplestaticwebsite.com/research.html" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <meta name="description" content="Example research page for the simple static website template.">
+    <meta name="keywords" content="simple,static,website,template,sswt,research">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+        try {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'inverse') {
+                document.documentElement.classList.add('inverse');
+            } else if (theme === 'light') {
+                document.documentElement.classList.remove('inverse');
+            }
+            document.documentElement.style.colorScheme =
+                document.documentElement.classList.contains('inverse') ? 'dark' : 'light';
+            const w = localStorage.getItem('siteWidth');
+            if (w === '4xl' || w === '6xl' || w === 'full') {
+                document.documentElement.setAttribute('data-site-width', w);
+            } else {
+                document.documentElement.setAttribute('data-site-width', '6xl');
+            }
+        } catch (_) {
+            document.documentElement.setAttribute('data-site-width', '6xl');
+        }
+    </script>
+    <style>
+        html { background-color: #080808; }
+        html:not(.inverse) { background-color: #ffffff; }
+    </style>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script type="module" src="/src/site.js"></script>
+    <!-- PROD_ONLY_START -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <!-- PROD_ONLY_END -->
+</head>
+<body class="flex min-h-dvh flex-col">
+<!-- include:_header.html -->
+<main class="flex min-h-0 flex-1 flex-col">
+    <div class="container main-behavior">
+        <div class="padded-content-2 space-y-6">
+            <h1 class="theme-ink-black text-center">Research</h1>
+            <p class="subtitle-text text-xl text-center neutral-gray-dark">
+                Sample notes and topic cards. Swap in papers, posts, or project write-ups as needed.
+            </p>
+
+            <div class="divider-bar"></div>
+
+            <div class="space-y-6">
+                    <section class="theme-card border rounded-md p-4 space-y-3">
+                        <h2 class="theme-signal-blue text-xl">Design systems on static sites</h2>
+                        <p>
+                            Token-based colors, shared layout shells, and a single JS entrypoint keep multi-page
+                            static sites consistent without a heavy framework. Name roles once
+                            (<span class="theme-ink-black">paper</span>,
+                            <span class="theme-ink-black">ink</span>,
+                            <span class="theme-signal-blue">signal</span>,
+                            <span class="theme-alert-red">alert</span>,
+                            <span class="theme-confirm-green">confirm</span>),
+                            then reuse them as text, background, or border.
+                        </p>
+                        <p class="neutral-gray-dark text-sm">
+                            Base text utilities and background helpers:
+                        </p>
+                        <pre class="theme-card border rounded-md p-3 overflow-x-auto text-sm font-mono"><code>&lt;p class="ink-black"&gt;Body copy on paper.&lt;/p&gt;
+&lt;p class="signal-blue"&gt;Primary accent text.&lt;/p&gt;
+&lt;span class="confirm-green bg paper-white"&gt; Success chip &lt;/span&gt;
+&lt;span class="alert-red bg paper-white"&gt; Error chip &lt;/span&gt;</code></pre>
+                        <p class="neutral-gray-dark text-sm">
+                            Theme helpers for color, hover, background, and border:
+                        </p>
+                        <pre class="theme-card border rounded-md p-3 overflow-x-auto text-sm font-mono"><code>&lt;a class="theme-signal-blue hover-dark" href="/research.html"&gt;Research&lt;/a&gt;
+&lt;button class="theme-confirm-green bg hover-dark rounded-md px-3 py-2"&gt;Save&lt;/button&gt;
+&lt;div class="theme-neutral-gray border rounded-md p-3"&gt;Muted frame&lt;/div&gt;</code></pre>
+                    </section>
+
+                    <section class="theme-card border rounded-md p-4 space-y-3">
+                        <h2 class="theme-confirm-green text-xl">Accessible theming</h2>
+                        <p>
+                            Light is the default surface. Inverse swaps the same token names so components keep working
+                            when <span class="theme-ink-black font-mono text-sm">html.inverse</span> is applied.
+                            Prefer role tokens over hard-coded hex so focus rings, accents, and body text stay readable
+                            on both paper and dark surfaces.
+                        </p>
+                        <p class="neutral-gray-dark text-sm">
+                            Soft hover for nav items, icon buttons, and chips:
+                        </p>
+                        <pre class="theme-card border rounded-md p-3 overflow-x-auto text-sm font-mono"><code>&lt;a class="theme-hover-accent rounded px-3 py-2" href="/products.html"&gt;Products&lt;/a&gt;
+&lt;button type="button" class="theme-toggle-btn" aria-label="Toggle inverse theme"&gt;
+  ◐
+&lt;/button&gt;</code></pre>
+                        <p class="neutral-gray-dark text-sm">
+                            Lighter and stronger companions when you need hierarchy without leaving the palette:
+                        </p>
+                        <pre class="theme-card border rounded-md p-3 overflow-x-auto text-sm font-mono"><code>&lt;p class="theme-ink-black lum"&gt;Secondary note&lt;/p&gt;
+&lt;p class="theme-signal-blue"&gt;Default link tone&lt;/p&gt;
+&lt;p class="theme-signal-blue hover-dark"&gt;Darker on hover&lt;/p&gt;
+&lt;p class="ink-black-dark"&gt;Strong emphasis&lt;/p&gt;</code></pre>
+                        <div class="flex flex-wrap gap-2 pt-1">
+                            <span class="theme-signal-blue bg rounded px-2 py-1 text-sm paper-white">signal</span>
+                            <span class="theme-confirm-green bg rounded px-2 py-1 text-sm paper-white">confirm</span>
+                            <span class="theme-alert-red bg rounded px-2 py-1 text-sm paper-white">alert</span>
+                            <span class="theme-neutral-gray border rounded px-2 py-1 text-sm">neutral</span>
+                        </div>
+                    </section>
+
+                    <section class="theme-card border rounded-md p-4 space-y-3">
+                        <h2 class="theme-alert-red text-xl">Performance defaults</h2>
+                        <p>
+                            Keep fonts local, ship one stylesheet, and limit client script to theme, width, and nav
+                            toggles. Cards and tables should inherit surface tokens so pages stay fast on first load
+                            and still flip cleanly between light and inverse.
+                        </p>
+                        <p class="neutral-gray-dark text-sm">
+                            Panel surface for notes, callouts, and resource blocks:
+                        </p>
+                        <pre class="theme-card border rounded-md p-3 overflow-x-auto text-sm font-mono"><code>&lt;article class="theme-card rounded-md p-4"&gt;
+  Flat panel
+&lt;/article&gt;
+
+&lt;article class="theme-card border rounded-md p-4"&gt;
+  Panel with optional border
+&lt;/article&gt;</code></pre>
+                        <p class="neutral-gray-dark text-sm">
+                            Simple status row using the same roles:
+                        </p>
+                        <pre class="theme-card border rounded-md p-3 overflow-x-auto text-sm font-mono"><code>&lt;ul class="space-y-1"&gt;
+  &lt;li class="theme-confirm-green"&gt;Build completed&lt;/li&gt;
+  &lt;li class="theme-signal-blue"&gt;Deploy in progress&lt;/li&gt;
+  &lt;li class="theme-alert-red"&gt;Check failed tests&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+                    </section>
+                </div>
+
+                <section class="space-y-3">
+                    <h2 class="theme-ink-black text-2xl text-center">Quick theme checklist</h2>
+                    <div class="theme-card border rounded-md p-4 space-y-2">
+                        <p>
+                            1. Put page text on
+                            <span class="theme-ink-black">ink</span>
+                            and surfaces on
+                            <span class="theme-ink-black">paper</span>.
+                        </p>
+                        <p>
+                            2. Use
+                            <span class="theme-signal-blue">signal</span>
+                            for links and primary actions,
+                            <span class="theme-confirm-green">confirm</span>
+                            for success, and
+                            <span class="theme-alert-red">alert</span>
+                            for errors.
+                        </p>
+                        <p>
+                            3. Add
+                            <span class="font-mono text-sm">.lum</span>,
+                            <span class="font-mono text-sm">.hover-dark</span>,
+                            <span class="font-mono text-sm">.bg</span>,
+                            or
+                            <span class="font-mono text-sm">.border</span>
+                            only when the control needs it.
+                        </p>
+                        <p class="neutral-gray-dark">
+                            4. Prefer
+                            <span class="font-mono text-sm">theme-card</span>
+                            and
+                            <span class="font-mono text-sm">theme-hover-accent</span>
+                            for repeated UI so light and inverse stay aligned.
+                        </p>
+                    </div>
+                </section>
+
+            <p class="text-lg text-center">
+                Use this page for long-form content or link related material from
+                <a href="/resources.html">resources</a>.
+            </p>
+        </div>
+    </div>
+</main>
+<!-- include:_footer.html -->
+</body>
+</html>

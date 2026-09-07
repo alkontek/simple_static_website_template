@@ -1,0 +1,235 @@
+/* SPDX-FileCopyrightText: 2026 ALKONTEK <git@alkontek.com>
+ * SPDX-License-Identifier: BSD-2-Clause
+ * -----------------------------------------------------------------------------
+ * Black & White Color Theme
+ * Light (default) + inverse (dark) via html.inverse
+ *
+ * lum  = lighter / more luminous companion (readable, not a pastel wash)
+ * base = primary
+ * dark = deeper / stronger emphasis
+ */
+
+:root {
+  // Paper White (surfaces / background)
+  --paper-white-lum: #ffffff;
+  --paper-white: #fafafa;
+  --paper-white-dark: #f0f0f0;
+
+  // Ink Black (type / foreground)
+  --ink-black-lum: #525252;
+  --ink-black: #171717;
+  --ink-black-dark: #0a0a0a;
+
+  // Neutral Gray (borders, muted UI)
+  --neutral-gray-lum: #e5e5e5;
+  --neutral-gray: #a3a3a3;
+  --neutral-gray-dark: #525252;
+
+  // Signal Blue (links / primary accent)
+  --signal-blue-lum: #60a5fa;
+  --signal-blue: #3b82f6;
+  --signal-blue-dark: #1d4ed8;
+
+  // Alert Red (errors / danger)
+  --alert-red-lum: #f87171;
+  --alert-red: #ef4444;
+  --alert-red-dark: #b91c1c;
+
+  // Confirm Green (success / safe)
+  --confirm-green-lum: #34d399;
+  --confirm-green: #10b981;
+  --confirm-green-dark: #047857;
+}
+
+// Inverse (dark background) — same token names, swapped roles
+html.inverse {
+  // Surfaces: darker page → container → lifted panels
+  --paper-white-lum: #080808;
+  --paper-white: #101010;
+  --paper-white-dark: #161616;
+
+  // Type: light ink
+  --ink-black-lum: #a3a3a3;
+  --ink-black: #f5f5f5;
+  --ink-black-dark: #ffffff;
+
+  // Neutrals
+  --neutral-gray-lum: #2a2a2a;
+  --neutral-gray: #666666;
+  --neutral-gray-dark: #d4d4d4;
+
+  // Accents: a bit brighter on dark surfaces
+  --signal-blue-lum: #93c5fd;
+  --signal-blue: #60a5fa;
+  --signal-blue-dark: #3b82f6;
+
+  --alert-red-lum: #fca5a5;
+  --alert-red: #f87171;
+  --alert-red-dark: #ef4444;
+
+  --confirm-green-lum: #6ee7b7;
+  --confirm-green: #34d399;
+  --confirm-green-dark: #10b981;
+}
+
+:root {
+  --theme-banner: url('/images/banner-lum.png');
+  //--theme-hero: url('/images/hero-lum.png');
+}
+
+html.inverse {
+  --theme-banner: url('/images/banner-dark.png');
+  //--theme-hero: url('/images/hero-dark.png');
+}
+
+// Single element; swaps via --theme-banner under html.inverse
+// `content` overrides src in modern browsers; src is the light fallback
+.theme-banner {
+  content: var(--theme-banner);
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+//.theme-hero {
+//  content: var(--theme-hero);
+//  display: block;
+//  max-width: 100%;
+//  height: auto;
+//}
+
+// Sass aliases (map to CSS vars so existing $token usage can migrate gradually)
+$paper-white-lum: var(--paper-white-lum);
+$paper-white: var(--paper-white);
+$paper-white-dark: var(--paper-white-dark);
+
+$ink-black-lum: var(--ink-black-lum);
+$ink-black: var(--ink-black);
+$ink-black-dark: var(--ink-black-dark);
+
+$neutral-gray-lum: var(--neutral-gray-lum);
+$neutral-gray: var(--neutral-gray);
+$neutral-gray-dark: var(--neutral-gray-dark);
+
+$signal-blue-lum: var(--signal-blue-lum);
+$signal-blue: var(--signal-blue);
+$signal-blue-dark: var(--signal-blue-dark);
+
+$alert-red-lum: var(--alert-red-lum);
+$alert-red: var(--alert-red);
+$alert-red-dark: var(--alert-red-dark);
+
+$confirm-green-lum: var(--confirm-green-lum);
+$confirm-green: var(--confirm-green);
+$confirm-green-dark: var(--confirm-green-dark);
+
+$theme-colors: (
+  'paper-white',
+  'ink-black',
+  'neutral-gray',
+  'signal-blue',
+  'alert-red',
+  'confirm-green'
+);
+
+// Base color utilities: .signal-blue / .signal-blue.bg
+@each $name in $theme-colors {
+  .#{$name} {
+    &:not(.bg) {
+      color: var(--#{$name});
+    }
+
+    &.bg {
+      background-color: var(--#{$name});
+    }
+  }
+
+  .#{$name}-dark {
+    color: var(--#{$name}-dark);
+  }
+
+  .#{$name}-lum {
+    color: var(--#{$name}-lum);
+  }
+}
+
+// Theme helper: .theme-signal-blue.lum | .hover-dark | .bg | .border
+@mixin theme-token($name) {
+  .theme-#{$name} {
+    color: var(--#{$name});
+
+    &.lum {
+      color: var(--#{$name}-lum);
+    }
+
+    &.hover-dark:hover {
+      color: var(--#{$name}-dark);
+    }
+
+    &.hover-lum:hover {
+      color: var(--#{$name}-lum);
+    }
+
+    &.bg {
+      background-color: var(--#{$name});
+    }
+
+    &.bg.hover-dark:hover {
+      background-color: var(--#{$name}-dark);
+    }
+
+    &.bg.hover-lum:hover {
+      background-color: var(--#{$name}-lum);
+    }
+
+    &.border {
+      border-color: var(--#{$name});
+    }
+
+    &.border.hover-dark:hover {
+      border-color: var(--#{$name}-dark);
+    }
+
+    &.border.hover-lum:hover {
+      border-color: var(--#{$name}-lum);
+    }
+  }
+}
+
+@include theme-token('paper-white');
+@include theme-token('ink-black');
+@include theme-token('neutral-gray');
+@include theme-token('signal-blue');
+@include theme-token('alert-red');
+@include theme-token('confirm-green');
+
+// Soft surface hover + accent text (nav items, icon buttons, chips)
+@mixin theme-hover-accent {
+  color: var(--ink-black);
+  transition: color 0.15s ease, background-color 0.15s ease;
+
+  &:hover {
+    color: var(--signal-blue);
+    background-color: var(--paper-white-dark);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--signal-blue);
+    outline-offset: 2px;
+  }
+}
+
+.theme-hover-accent {
+  @include theme-hover-accent;
+}
+
+// Panel / card surface — follows light + inverse
+// Default: flat surface, no border. Opt-in: add .border
+.theme-card {
+  color: var(--ink-black);
+  background-color: var(--paper-white-dark);
+
+  &.border {
+    border: 1px solid var(--neutral-gray-lum);
+  }
+}

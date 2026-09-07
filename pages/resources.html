@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en" class="inverse">
+<head>
+    <meta charset="utf-8">
+    <title>Resources | Simple Static Website Template</title>
+    <link rel="canonical" href="https://simplestaticwebsite.com/resources.html" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <meta name="description" content="Example resources page for the simple static website template.">
+    <meta name="keywords" content="simple,static,website,template,sswt,resources">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+        try {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'inverse') {
+                document.documentElement.classList.add('inverse');
+            } else if (theme === 'light') {
+                document.documentElement.classList.remove('inverse');
+            }
+            document.documentElement.style.colorScheme =
+                document.documentElement.classList.contains('inverse') ? 'dark' : 'light';
+            const w = localStorage.getItem('siteWidth');
+            if (w === '4xl' || w === '6xl' || w === 'full') {
+                document.documentElement.setAttribute('data-site-width', w);
+            } else {
+                document.documentElement.setAttribute('data-site-width', '6xl');
+            }
+        } catch (_) {
+            document.documentElement.setAttribute('data-site-width', '6xl');
+        }
+    </script>
+    <style>
+        html { background-color: #080808; }
+        html:not(.inverse) { background-color: #ffffff; }
+    </style>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script type="module" src="/src/site.js"></script>
+    <!-- PROD_ONLY_START -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <!-- PROD_ONLY_END -->
+</head>
+<body class="flex min-h-dvh flex-col">
+<!-- include:_header.html -->
+<main class="flex min-h-0 flex-1 flex-col">
+    <div class="container main-behavior">
+        <div class="padded-content-2 space-y-6">
+                <h1 class="theme-ink-black text-center">Resources</h1>
+                <p class="subtitle-text text-xl text-center neutral-gray-dark">
+                    Project references, stack notes, status labels, and common open-source licenses you can reuse or replace.
+                </p>
+
+                <div class="divider-bar"></div>
+
+                <div class="theme-card rounded-md p-4 space-y-3">
+                    <h2 class="text-xl">Project links</h2>
+                    <ul class="list-disc space-y-1 p-4">
+                        <li>Template repository on <a href="https://github.com/alkontek/simple_static_website_template">GitHub</a> (replace with your URL)</li>
+                        <li>Issue tracker and release notes in the same repository</li>
+                        <li>Design notes on the <a href="/research.html">research</a> page</li>
+                        <li>Implementation ideas under <a href="/products.html">products and solutions</a></li>
+                        <li>Contact path for feedback on the <a href="/contact.html">contact</a> page</li>
+                    </ul>
+                </div>
+
+                <div class="theme-card border rounded-md p-4 space-y-3">
+                    <h2 class="theme-ink-black text-xl">What this project includes</h2>
+                    <ul class="list-disc space-y-1 p-4">
+                        <li>Multi-page static layout with shared header, main shell, and footer</li>
+                        <li>Light default theme plus inverse mode via a single page-level switch</li>
+                        <li>Site width cycle for comfortable reading on large screens</li>
+                        <li>Token-based colors for text, surfaces, accents, success, and danger</li>
+                        <li>Example cards, lists, and tables ready to swap for real docs or downloads</li>
+                    </ul>
+                    <ul class="list-disc space-y-1 p-4">
+                        <li class="neutral-gray-dark">No CMS, auth, or server runtime required for the default build</li>
+                        <li class="neutral-gray-dark">Client script limited to theme, width, and navigation helpers</li>
+                    </ul>
+                </div>
+
+                <div class="space-y-3">
+                    <h2 class="text-center">Component status</h2>
+                    <p class="text-center neutral-gray-dark">
+                        Current template surface area—stable pieces you can reuse, examples still being filled in, and common UI still to add.
+                    </p>
+                    <ul class="list-disc space-y-1 p-4">
+                        <li>Theme tokens (paper, ink, neutral, signal, alert, confirm) <small class="theme-confirm-green">stable</small></li>
+                        <li>Inverse mode (<code class="text-sm">html.inverse</code>) <small class="theme-confirm-green">stable</small></li>
+                        <li>Site width cycle (4xl / 6xl / full) <small class="theme-confirm-green">stable</small></li>
+                        <li>Shared layout shell (header, main, footer) <small class="theme-confirm-green">stable</small></li>
+                        <li>Desktop nav + mobile menu <small class="theme-confirm-green">stable</small></li>
+                        <li>Theme and width toggle controls <small class="theme-confirm-green">stable</small></li>
+                        <li>Theme utilities (cards, hover accent, text/bg/border helpers) <small class="theme-confirm-green">stable</small></li>
+                        <li>Resource tables (gray / blue / green / red) <small class="theme-confirm-green">stable</small></li>
+                        <li>Typography, links, and page sections <small class="theme-confirm-green">stable</small></li>
+                        <li>Example content pages and sample lists <small class="theme-signal-blue">partial</small></li>
+                        <li>Status labels in resource lists <small class="theme-signal-blue">partial</small></li>
+                        <li>Motion helpers (Anime.js available) <small class="theme-signal-blue">partial</small></li>
+                        <li>Form controls and validation UI <small class="theme-alert-red">planned</small></li>
+                        <li>Buttons / input group patterns <small class="theme-alert-red">planned</small></li>
+                        <li>Flash alerts and toast messages <small class="theme-alert-red">planned</small></li>
+                        <li>Modal dialogs <small class="theme-alert-red">planned</small></li>
+                        <li>Pagination and breadcrumbs <small class="theme-alert-red">planned</small></li>
+                        <li>CMS integration <small class="theme-alert-red">not included</small></li>
+                        <li>Hosted search <small class="theme-alert-red">not included</small></li>
+                    </ul>
+                </div>
+
+                <div class="space-y-4">
+                    <h2 class="theme-ink-black text-center">Stack reference</h2>
+                    <p class="text-center neutral-gray-dark">
+                        High-level tools used by this template. Replace versions when you publish your own fork.
+                    </p>
+                    <table class="resource-table blue-table">
+                        <thead>
+                        <tr>
+                            <th>Layer</th>
+                            <th>Choice</th>
+                            <th>Role</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Build</td>
+                            <td>Vite</td>
+                            <td>Dev server and production bundling</td>
+                        </tr>
+                        <tr>
+                            <td>Style</td>
+                            <td>Tailwind CSS + Sass</td>
+                            <td>Utility layout and theme stylesheets</td>
+                        </tr>
+                        <tr>
+                            <td>Interaction</td>
+                            <td>Alpine.js</td>
+                            <td>Light client behavior where needed</td>
+                        </tr>
+                        <tr>
+                            <td>Motion</td>
+                            <td>Anime.js</td>
+                            <td>Optional UI animation helpers</td>
+                        </tr>
+                        <tr>
+                            <td>Content</td>
+                            <td>Static HTML pages</td>
+                            <td>Docs, marketing, and resource listings</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="space-y-4">
+                    <h2 class="theme-ink-black text-center">Sample reference table</h2>
+                    <p class="text-center">
+                        Demonstrates <code class="theme-neutral-gray">.resource-table</code> with theme-aware surfaces.
+                    </p>
+                    <table class="resource-table gray-table">
+                        <thead>
+                        <tr>
+                            <th>Area</th>
+                            <th>Example</th>
+                            <th>Notes</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Layout</td>
+                            <td>Header / main / footer</td>
+                            <td>Shared shell and max width</td>
+                        </tr>
+                        <tr>
+                            <td>Theme</td>
+                            <td>Light + inverse</td>
+                            <td>CSS variables on <code>html</code></td>
+                        </tr>
+                        <tr>
+                            <td>Interactivity</td>
+                            <td>Nav + theme button</td>
+                            <td>Plain JS modules</td>
+                        </tr>
+                        <tr>
+                            <td>Content</td>
+                            <td>Cards + tables</td>
+                            <td>Replace with your data</td>
+                        </tr>
+                        <tr>
+                            <td>Resources</td>
+                            <td>Lists + license links</td>
+                            <td>Good fit for docs hubs</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="space-y-4">
+                    <h2 class="theme-ink-black text-center">Release checklist</h2>
+                    <p class="text-center neutral-gray-dark">
+                        Example tracking table for template adoption milestones.
+                    </p>
+                    <table class="resource-table green-table">
+                        <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Owner</th>
+                            <th>Status</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Replace site name and slogan</td>
+                            <td>Design</td>
+                            <td><span class="theme-confirm-green">done</span></td>
+                        </tr>
+                        <tr>
+                            <td>Confirm light / inverse contrast</td>
+                            <td>Design</td>
+                            <td><span class="theme-confirm-green">done</span></td>
+                        </tr>
+                        <tr>
+                            <td>Point repo and docs links</td>
+                            <td>Engineering</td>
+                            <td><span class="theme-signal-blue">in progress</span></td>
+                        </tr>
+                        <tr>
+                            <td>Add real download artifacts</td>
+                            <td>Engineering</td>
+                            <td><span class="theme-alert-red">todo</span></td>
+                        </tr>
+                        <tr>
+                            <td>Choose project license</td>
+                            <td>Legal</td>
+                            <td><span class="theme-signal-blue">in progress</span></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="theme-card border rounded-md p-4 space-y-3">
+                    <h2 class="theme-confirm-green text-xl">Suggested doc sections</h2>
+                    <ol class="list-decimal space-y-1 p-4">
+                        <li>Getting started and local development</li>
+                        <li>Theming tokens, inverse mode, and width preferences</li>
+                        <li>Page structure and shared layout conventions</li>
+                        <li>Tables, cards, and resource listing patterns</li>
+                        <li>Deployment notes for static hosts</li>
+                        <li>License, attribution, and third-party notices</li>
+                    </ol>
+                </div>
+
+                <div class="space-y-3">
+                    <h2 class="theme-alert-red text-xl">Licenses</h2>
+                    <p>
+                        This template is meant to be copied and adapted. Common open-source licenses are listed below
+                        as references—point the links at your own license texts before shipping.
+                    </p>
+                    <ul class="list-disc space-y-1 p-4">
+                        <li><a href="https://opensource.org/licenses/MIT">MIT</a></li>
+                        <li><a href="https://opensource.org/licenses/BSD-2-Clause">BSD-2-Clause</a></li>
+                        <li><a href="https://opensource.org/licenses/BSD-3-Clause">BSD-3-Clause</a></li>
+                        <li><a href="https://www.apache.org/licenses/LICENSE-2.0">Apache-2.0</a></li>
+                        <li><a href="https://www.mozilla.org/MPL/2.0/">MPL-2.0</a></li>
+                        <li><a href="https://www.gnu.org/licenses/lgpl-3.0.html">LGPL-3.0</a></li>
+                        <li><a href="https://www.gnu.org/licenses/gpl-3.0.html">GPL-3.0</a></li>
+                        <li><a href="https://www.gnu.org/licenses/agpl-3.0.html">AGPL-3.0</a></li>
+                        <li><a href="https://opensource.org/licenses/ISC">ISC</a></li>
+                        <li><a href="https://unlicense.org/">Unlicense</a></li>
+                        <li><a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0-1.0</a></li>
+                    </ul>
+                    <table class="resource-table red-table">
+                        <thead>
+                        <tr>
+                            <th>License</th>
+                            <th>Family</th>
+                            <th>Typical use</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>MIT / BSD / ISC</td>
+                            <td>Permissive</td>
+                            <td>Simple apps and libraries with wide reuse</td>
+                        </tr>
+                        <tr>
+                            <td>Apache-2.0</td>
+                            <td>Permissive</td>
+                            <td>Patent grant and explicit contribution terms</td>
+                        </tr>
+                        <tr>
+                            <td>MPL-2.0</td>
+                            <td>Weak copyleft</td>
+                            <td>File-level sharing while allowing larger works</td>
+                        </tr>
+                        <tr>
+                            <td>LGPL-3.0</td>
+                            <td>Weak copyleft</td>
+                            <td>Libraries that can link into other software</td>
+                        </tr>
+                        <tr>
+                            <td>GPL-3.0 / AGPL-3.0</td>
+                            <td>Strong copyleft</td>
+                            <td>Projects that require derivative sharing</td>
+                        </tr>
+                        <tr>
+                            <td>Unlicense / CC0-1.0</td>
+                            <td>Public domain-style</td>
+                            <td>Maximum dedication to the public domain</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <p class="neutral-gray-dark text-sm">
+                        This page is informational only and is not legal advice. Confirm the license text that applies
+                        to your repository and any bundled third-party fonts or packages.
+                    </p>
+                </div>
+            </div>
+    </div>
+</main>
+<!-- include:_footer.html -->
+</body>
+</html>

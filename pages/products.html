@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en" class="inverse">
+<head>
+    <meta charset="utf-8">
+    <title>Products | Simple Static Website Template</title>
+    <link rel="canonical" href="https://simplestaticwebsite.com/products.html" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <meta name="description" content="Example products and solutions page for the simple static website template.">
+    <meta name="keywords" content="simple,static,website,template,sswt,solutions">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+        try {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'inverse') {
+                document.documentElement.classList.add('inverse');
+            } else if (theme === 'light') {
+                document.documentElement.classList.remove('inverse');
+            }
+            document.documentElement.style.colorScheme =
+                document.documentElement.classList.contains('inverse') ? 'dark' : 'light';
+            const w = localStorage.getItem('siteWidth');
+            if (w === '4xl' || w === '6xl' || w === 'full') {
+                document.documentElement.setAttribute('data-site-width', w);
+            } else {
+                document.documentElement.setAttribute('data-site-width', '6xl');
+            }
+        } catch (_) {
+            document.documentElement.setAttribute('data-site-width', '6xl');
+        }
+    </script>
+    <style>
+        html { background-color: #080808; }
+        html:not(.inverse) { background-color: #ffffff; }
+    </style>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script type="module" src="/src/site.js"></script>
+    <!-- PROD_ONLY_START -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <!-- PROD_ONLY_END -->
+</head>
+<body class="flex min-h-dvh flex-col">
+<!-- include:_header.html -->
+<main class="flex min-h-0 flex-1 flex-col">
+    <div class="container main-behavior">
+        <div class="padded-content-2 space-y-6">
+            <h1 class="theme-ink-black text-center">Products and Solutions</h1>
+            <p class="subtitle-text text-xl text-center neutral-gray-dark">
+                A static site foundation with shared layout, token-based theming, and room to grow into fuller UI kits.
+            </p>
+
+            <div class="divider-bar"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="theme-card border rounded-md p-4 space-y-2">
+                    <h2 class="theme-signal-blue text-xl">Starter Kit</h2>
+                    <p>
+                        A ready-made layout, theme tokens, and navigation pattern for marketing, docs, or lab sites.
+                    </p>
+                    <ul class="list-disc space-y-1 p-4">
+                        <li>Responsive header and mobile menu</li>
+                        <li>Light / inverse theme toggle</li>
+                        <li>Shared content width controls</li>
+                        <li>Paper, ink, and accent tokens out of the box</li>
+                    </ul>
+                </div>
+                <div class="theme-card border rounded-md p-4 space-y-2">
+                    <h2 class="theme-confirm-green text-xl">Team Site</h2>
+                    <p>
+                        Extend the shell with extra pages, tables, and resource lists for internal or public use.
+                    </p>
+                    <ul class="list-disc space-y-1 p-4">
+                        <li>Reusable section and card styles</li>
+                        <li>Simple static hosting friendly</li>
+                        <li>Easy branding and copy swaps</li>
+                        <li>Status labels and reference tables</li>
+                    </ul>
+                </div>
+                <div class="theme-card border rounded-md p-4 space-y-2">
+                    <h2 class="theme-ink-black text-xl">Theme Core</h2>
+                    <p>
+                        Role-based color system that stays readable in light and inverse without rewriting components.
+                    </p>
+                    <ul class="list-disc space-y-1 p-4">
+                        <li>Surfaces on paper tokens</li>
+                        <li>Type on ink tokens</li>
+                        <li>Signal / confirm / alert accents</li>
+                        <li>Hover, border, and background helpers</li>
+                    </ul>
+                </div>
+                <div class="theme-card border rounded-md p-4 space-y-2">
+                    <h2 class="theme-alert-red text-xl">Future UI Kit</h2>
+                    <p>
+                        Planned patterns that build on the same tokens so new components inherit light and inverse
+                        automatically.
+                    </p>
+                    <ul class="list-disc space-y-1 p-4">
+                        <li>Forms, inputs, and validation states</li>
+                        <li>Buttons and grouped controls</li>
+                        <li>Alerts, toasts, and modals</li>
+                        <li>Pagination and breadcrumbs</li>
+                    </ul>
+                </div>
+            </div>
+
+            <section class="space-y-4">
+                <h2 class="theme-ink-black text-2xl text-center">Use cases</h2>
+                <p class="text-center neutral-gray-dark">
+                    Practical places this template—and a future expanded theme—fit well.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="theme-card border rounded-md p-4 space-y-2">
+                        <h3 class="theme-signal-blue text-lg">Product and marketing sites</h3>
+                        <p>
+                            Launch pages, feature grids, and pricing-style sections that share one header, footer,
+                            and accent language across every route.
+                        </p>
+                        <ul class="list-disc space-y-1 p-4">
+                            <li>Consistent CTA and link colors</li>
+                            <li>Card-based feature blocks</li>
+                            <li>Inverse mode for evening reading or demos</li>
+                        </ul>
+                    </div>
+
+                    <div class="theme-card border rounded-md p-4 space-y-2">
+                        <h3 class="theme-signal-blue text-lg">Docs and knowledge bases</h3>
+                        <p>
+                            Multi-page documentation with stable typography, width control, and tables for commands,
+                            options, and release notes.
+                        </p>
+                        <ul class="list-disc space-y-1 p-4">
+                            <li>Readable long-form content width</li>
+                            <li>Resource tables for API or CLI notes</li>
+                            <li>Theme tokens for tips, warnings, and success</li>
+                        </ul>
+                    </div>
+
+                    <div class="theme-card border rounded-md p-4 space-y-2">
+                        <h3 class="theme-confirm-green text-lg">Open-source project hubs</h3>
+                        <p>
+                            Repository companions that list downloads, licenses, status, and research notes without
+                            standing up a CMS.
+                        </p>
+                        <ul class="list-disc space-y-1 p-4">
+                            <li>License and stack reference tables</li>
+                            <li>Component status lists</li>
+                            <li>Links out to GitHub, docs, and contact</li>
+                        </ul>
+                    </div>
+
+                    <div class="theme-card border rounded-md p-4 space-y-2">
+                        <h3 class="theme-confirm-green text-lg">Research and lab notebooks</h3>
+                        <p>
+                            Lightweight public notes for design systems, performance defaults, and accessibility
+                            experiments tied to the same visual language.
+                        </p>
+                        <ul class="list-disc space-y-1 p-4">
+                            <li>Topic cards and sample snippets</li>
+                            <li>Clear hierarchy with ink and accent roles</li>
+                            <li>Fast static publish cycle</li>
+                        </ul>
+                    </div>
+
+                    <div class="theme-card border rounded-md p-4 space-y-2">
+                        <h3 class="theme-ink-black text-lg">Internal team portals</h3>
+                        <p>
+                            Simple handbooks, onboarding checklists, and service catalogs that stay on brand in
+                            both light and inverse.
+                        </p>
+                        <ul class="list-disc space-y-1 p-4">
+                            <li>Shared shell for many short pages</li>
+                            <li>Status chips for ownership and progress</li>
+                            <li>Low maintenance on static hosts</li>
+                        </ul>
+                    </div>
+
+                    <div class="theme-card border rounded-md p-4 space-y-2">
+                        <h3 class="theme-ink-black text-lg">Brandable theme starter</h3>
+                        <p>
+                            A base for future branded themes: swap token values once, keep component classes, and
+                            grow forms or overlays later without a redesign.
+                        </p>
+                        <ul class="list-disc space-y-1 p-4">
+                            <li>Role tokens instead of one-off hex values</li>
+                            <li>Lum / base / dark steps for hierarchy</li>
+                            <li>Path to a fuller component theme</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="theme-card border rounded-md p-4 space-y-3">
+                <h2 class="text-xl">Future theme directions</h2>
+                <ul class="list-disc space-y-1 p-4">
+                    <li>
+                        <span class="theme-ink-black">Form theme</span>
+                        — inputs, labels, errors, and disabled states mapped to ink, neutral, and alert tokens
+                    </li>
+                    <li>
+                        <span class="theme-ink-black">Feedback theme</span>
+                        — inline alerts, toast stacks, and empty states using confirm, signal, and alert
+                    </li>
+                    <li>
+                        <span class="theme-ink-black">Navigation theme</span>
+                        — breadcrumbs, tabs, and side nav built on hover-accent and card surfaces
+                    </li>
+                    <li>
+                        <span class="theme-ink-black">Data theme</span>
+                        — denser tables, filter chips, and pagination for resource-heavy pages
+                    </li>
+                    <li>
+                        <span class="theme-ink-black">Campaign variants</span>
+                        — alternate accent presets (for example, stronger signal or softer neutral) without changing
+                        markup
+                    </li>
+                </ul>
+                <div class="flex flex-wrap gap-2 pt-1">
+                    <span class="theme-signal-blue bg rounded px-2 py-1 text-sm paper-white">signal actions</span>
+                    <span class="theme-confirm-green bg rounded px-2 py-1 text-sm paper-white">confirm states</span>
+                    <span class="theme-alert-red bg rounded px-2 py-1 text-sm paper-white">alert states</span>
+                    <span class="theme-neutral-gray border rounded px-2 py-1 text-sm">neutral chrome</span>
+                </div>
+            </section>
+
+            <section class="text-center">
+                <h2>Status</h2>
+                <div class="divider-bar divider-bar-green" aria-hidden="true"></div>
+                <p>All systems are nominal.</p>
+            </section>
+
+            <section class="text-center">
+                <h2>Alerts</h2>
+                <div class="divider-bar divider-bar-red divider-bar-my-4" aria-hidden="true"></div>
+                <p>Review required items below.</p>
+            </section>
+
+            <section class="text-center">
+                <h2>Signals</h2>
+                <div class="divider-bar divider-bar-blue divider-bar-my-6" aria-hidden="true"></div>
+                <p>Live feed and updates.</p>
+            </section>
+
+            <section class="text-center">
+                <h2>Generic</h2>
+                <div class="divider-bar divider-bar-white divider-bar-my-8" aria-hidden="true"></div>
+                <p>A generic divider.</p>
+            </section>
+        </div>
+    </div>
+</main>
+<!-- include:_footer.html -->
+</body>
+</html>

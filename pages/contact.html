@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" class="inverse">
+<head>
+    <meta charset="utf-8">
+    <title>Contact | Simple Static Website Template</title>
+    <link rel="canonical" href="https://simplestaticwebsite.com/contact.html" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <meta name="description" content="Example contact page for the simple static website template.">
+    <meta name="keywords" content="simple,static,website,template,sswt,contact">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+        try {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'inverse') {
+                document.documentElement.classList.add('inverse');
+            } else if (theme === 'light') {
+                document.documentElement.classList.remove('inverse');
+            }
+            document.documentElement.style.colorScheme =
+                document.documentElement.classList.contains('inverse') ? 'dark' : 'light';
+            const w = localStorage.getItem('siteWidth');
+            if (w === '4xl' || w === '6xl' || w === 'full') {
+                document.documentElement.setAttribute('data-site-width', w);
+            } else {
+                document.documentElement.setAttribute('data-site-width', '6xl');
+            }
+        } catch (_) {
+            document.documentElement.setAttribute('data-site-width', '6xl');
+        }
+    </script>
+    <style>
+        html { background-color: #080808; }
+        html:not(.inverse) { background-color: #ffffff; }
+    </style>
+    <link rel="stylesheet" href="/src/styles.css" />
+    <script type="module" src="/src/site.js"></script>
+    <!-- PROD_ONLY_START -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <!-- PROD_ONLY_END -->
+</head>
+<body class="flex min-h-dvh flex-col">
+<!-- include:_header.html -->
+<main class="flex min-h-0 flex-1 flex-col">
+    <div class="container main-behavior">
+        <div class="padded-content-2 space-y-6">
+            <h1 class="theme-ink-black text-center">Contact</h1>
+            <p class="subtitle-text text-xl text-center neutral-gray-dark">
+                Example contact block. Replace the addresses with your own.
+            </p>
+
+            <div class="divider-bar"></div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="theme-card rounded-md p-4 text-center space-y-2">
+                    <h2 class="text-xl">General</h2>
+                    <p class="contact-text mt-0">
+                        Questions about the template or sample content.
+                    </p>
+                    <p>
+                        <a href="mailto:hello@example.com">hello@simplestaticwebsite.com</a>
+                    </p>
+                </div>
+                <div class="theme-card rounded-md p-4 text-center space-y-2">
+                    <h2 class="text-xl">Business</h2>
+                    <p class="contact-text mt-0">
+                        Partnerships, support, or custom work inquiries.
+                    </p>
+                    <p>
+                        <a href="mailto:business@example.com">business@simplestaticwebsite.com</a>
+                    </p>
+                </div>
+            </div>
+
+            <p class="text-lg text-center">
+                Prefer browsing first?
+                See <a href="/products.html">solutions</a>,
+                <a href="/research.html">research</a>,
+                or <a href="/resources.html">resources</a>.
+            </p>
+        </div>
+    </div>
+</main>
+<!-- include:_footer.html -->
+</body>
+</html>

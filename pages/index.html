@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" class="inverse">
+<head>
+    <meta charset="utf-8">
+    <title>Simple Static Website Template</title>
+    <link rel="canonical" href="https://simplestaticwebsite.com"/>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <meta name="description" content="A simple static website template with TailwindCSS and Alpine.js">
+    <meta name="keywords" content="simple,static,website,template,sswt">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <script>
+        try {
+            const theme = localStorage.getItem('theme');
+            if (theme === 'inverse') {
+                document.documentElement.classList.add('inverse');
+            } else if (theme === 'light') {
+                document.documentElement.classList.remove('inverse');
+            }
+            document.documentElement.style.colorScheme =
+                document.documentElement.classList.contains('inverse') ? 'dark' : 'light';
+            const w = localStorage.getItem('siteWidth');
+            if (w === '4xl' || w === '6xl' || w === 'full') {
+                document.documentElement.setAttribute('data-site-width', w);
+            } else {
+                document.documentElement.setAttribute('data-site-width', '6xl');
+            }
+        } catch (_) {
+            document.documentElement.setAttribute('data-site-width', '6xl');
+        }
+    </script>
+    <style>
+        html { background-color: #080808; }
+        html:not(.inverse) { background-color: #ffffff; }
+    </style>
+    <link rel="stylesheet" href="/src/styles.css"/>
+    <script type="module" src="/src/site.js"></script>
+    <!-- PROD_ONLY_START -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <!-- PROD_ONLY_END -->
+</head>
+<body class="flex min-h-dvh flex-col">
+<!-- include:_header.html -->
+<main class="flex min-h-0 flex-1 flex-col">
+    <div class="container main-behavior">
+        <div class="padded-content-2 space-y-16 md:space-y-24 py-4 md:py-8">
+            <section class="space-y-4 md:space-y-5">
+                <h1 class="theme-ink-black text-center">Build with clarity</h1>
+                <p class="subtitle-text text-xl text-center neutral-gray-dark max-w-3xl mx-auto">
+                    We design and ship infrastructure, developer tools, and cloud services that help
+                    companies build, deploy, and scale products with confidence.
+                </p>
+            </section>
+
+            <section class="space-y-8 md:space-y-10">
+                <div class="space-y-3 max-w-2xl">
+                    <h2 class="theme-ink-black">What we build</h2>
+                    <p class="neutral-gray-dark">
+                        Practical systems across platform, data, and security—shared defaults, clear interfaces,
+                        and documentation you can run with.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
+                    <div class="space-y-3">
+                        <h3 class="theme-signal-blue text-xl">Platform</h3>
+                        <ul class="list-disc space-y-2 pl-5">
+                            <li>API gateways and service mesh tooling</li>
+                            <li>Identity, access, and secrets management</li>
+                            <li>Observability and incident response kits</li>
+                            <li>Multi-region deployment automation</li>
+                        </ul>
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="theme-confirm-green text-xl">Data</h3>
+                        <ul class="list-disc space-y-2 pl-5">
+                            <li>Streaming pipelines and event stores</li>
+                            <li>Analytics warehouses and query layers</li>
+                            <li>Schema governance and data quality checks</li>
+                            <li>Backup, recovery, and retention policies</li>
+                        </ul>
+                    </div>
+                    <div class="space-y-3">
+                        <h3 class="theme-alert-red text-xl">Security</h3>
+                        <ul class="list-disc space-y-2 pl-5">
+                            <li>Secure defaults for cloud workloads</li>
+                            <li>Threat detection and audit logging</li>
+                            <li>Dependency scanning and supply-chain checks</li>
+                            <li>Compliance-ready reporting templates</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <section class="space-y-8 md:space-y-10">
+                <img src="/images/banner-lum.png" alt="Banner" class="theme-banner mx-auto">
+            </section>
+
+            <section class="space-y-8 md:space-y-10">
+                <h2 class="theme-ink-black text-center">Why teams choose us</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+                    <div class="space-y-2 md:text-center">
+                        <p class="theme-signal-blue text-base font-oxanium font-bold tracking-wider uppercase">01</p>
+                        <h3 class="text-lg">Simple interfaces</h3>
+                        <p class="neutral-gray-dark">
+                            Strong defaults and predictable APIs so teams spend less time on boilerplate and more
+                            time on product work.
+                        </p>
+                    </div>
+                    <div class="space-y-2 md:text-center">
+                        <p class="theme-confirm-green text-base font-oxanium font-bold tracking-wider uppercase">02</p>
+                        <h3 class="text-lg">Operable by default</h3>
+                        <p class="neutral-gray-dark">
+                            Observability, recovery paths, and secure baseline configs are part of the package—not
+                            optional extras.
+                        </p>
+                    </div>
+                    <div class="space-y-2 md:text-center">
+                        <p class="theme-ink-black text-base font-oxanium font-bold tracking-wider uppercase">03</p>
+                        <h3 class="text-lg">Docs you can use</h3>
+                        <p class="neutral-gray-dark">
+                            Clear guides, reference tables, and examples aimed at day-one setup and day-two
+                            operations.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="space-y-6 md:space-y-8">
+                <div class="md:grid md:grid-cols-5 md:gap-12 md:items-start">
+                    <div class="md:col-span-2 space-y-3 mb-6 md:mb-0">
+                        <h2 class="theme-ink-black">Who it is for</h2>
+                        <p class="neutral-gray-dark">
+                            Groups that want polished multi-page sites and token-first UI without a heavy stack.
+                        </p>
+                    </div>
+                    <ul class="md:col-span-3 space-y-6 md:space-y-8">
+                        <li class="space-y-1">
+                            <h3 class="text-lg">Small teams</h3>
+                            <p class="neutral-gray-dark">
+                                Ship a polished multi-page site quickly, without adopting a heavy front-end stack.
+                            </p>
+                        </li>
+                        <li class="space-y-1">
+                            <h3 class="text-lg">Design-minded engineers</h3>
+                            <p class="neutral-gray-dark">
+                                Token-first styling and a clean path from static pages to a reusable theme.
+                            </p>
+                        </li>
+                        <li class="space-y-1">
+                            <h3 class="text-lg">Project maintainers</h3>
+                            <p class="neutral-gray-dark">
+                                Publish docs, research, and resources beside a repository with minimal upkeep.
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+    </div>
+</main>
+<!-- include:_footer.html -->
+</body>
+</html>
